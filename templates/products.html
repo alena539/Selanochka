@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Продукты {% endblock %}
+
+{% block zag %} <center> Наша продукция </center> {% endblock %}
+
+{% block content %} 
+<style>
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+ul li {
+    text-align: center; /* Центрируем содержимое элемента списка */
+    margin: 10px; /* Добавляем небольшой отступ между элементами */
+    justify-content: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul li img {
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+</style> 
+<ul>
+    {% for word in first_words %}
+        <li>
+            <a href="/line/{{ loop.index }}">
+                <img src="{{ url_for('static', filename='images/'+word+'.jpg') }}" alt="{{ word }}" width="100" height="100">
+            </a>
+        </li>
+    {% endfor %}
+{% endblock %}

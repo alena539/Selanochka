@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Добавить отзыв {% endblock %}
+
+{% block zag %}   {% endblock %}
+
+{% block content %} 
+
+<ul class="uploaded-lines">
+</ul>
+<center>
+   <h1>Добавь свой отзыв!(формат txt)</h1>
+   <form action="/reviews" method="post" enctype="multipart/form-data">
+       <input type="file" name="file">
+       <input type="submit" value="Загрузить">
+   </form>
+</center>
+<style>
+   body {
+       font-family: Arial, sans-serif;
+       background-color: #f7f7f7;
+       margin: 0;
+       padding: 0;
+   }
+
+   form {
+       text-align: center;
+       margin-top: 30px;
+   }
+
+   input[type="file"] {
+       padding: 10px;
+       border: 1px solid #333;
+       border-radius: 5px;
+   }
+
+   input[type="submit"] {
+       padding: 10px 20px;
+       background-color: #333;
+       color: #fff;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+   }
+</style>
+{% endblock %}
